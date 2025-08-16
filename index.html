@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初心者のためのAI活用セミナー | 斎藤友二</title>
+    <meta name="description" content="中小企業経営者のためのAI活用入門セミナー。業務に今すぐ使えるAIの第一歩を学びましょう。講師：斎藤友二（AI開発エンジニア）">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .ai-icon {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl ai-icon mr-3"></i>
+                    <span class="text-xl font-bold text-gray-800">AI活用セミナー</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#seminar" class="text-gray-600 hover:text-blue-600 transition duration-300">セミナー概要</a>
+                    <a href="#instructor" class="text-gray-600 hover:text-blue-600 transition duration-300">講師紹介</a>
+                    <a href="#agenda" class="text-gray-600 hover:text-blue-600 transition duration-300">プログラム</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-blue-600 transition duration-300">効果・メリット</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">お申込み</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#seminar" class="block py-2 text-gray-600 hover:text-blue-600">セミナー概要</a>
+                <a href="#instructor" class="block py-2 text-gray-600 hover:text-blue-600">講師紹介</a>
+                <a href="#agenda" class="block py-2 text-gray-600 hover:text-blue-600">プログラム</a>
+                <a href="#benefits" class="block py-2 text-gray-600 hover:text-blue-600">効果・メリット</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">お申込み</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-animate">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    初心者のための<br>
+                    <span class="text-yellow-300">AI活用セミナー</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl mb-8 font-light">
+                    初心者でもわかる！中小企業経営者のための AI活用入門<br>
+                    <span class="text-yellow-200">あなたの業務に、今すぐ使えるAIの第一歩</span>
+                </h2>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-12">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-tie text-yellow-300 mr-2"></i>
+                        <span>講師：斎藤友二（AI開発エンジニア）</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt text-yellow-300 mr-2"></i>
+                        <span>2025年開催</span>
+                    </div>
+                </div>
+                <a href="#contact" class="inline-block bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105 pulse-animation">
+                    今すぐセミナーに申し込む
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seminar Overview -->
+    <section id="seminar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-lightbulb ai-icon mr-3"></i>
+                    セミナー概要
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    AI技術の急速な進化により、ビジネス環境は大きく変化しています。<br>
+                    このセミナーでは、中小企業経営者の皆様がAIを効果的に活用するための<br>
+                    実践的な知識とスキルをお伝えします。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="text-center">
+                        <i class="fas fa-graduation-cap text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">初心者向け</h3>
+                        <p class="text-gray-600">
+                            AI技術に詳しくない方でも安心。基礎から丁寧に解説し、実践的な活用法を学べます。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="text-center">
+                        <i class="fas fa-building text-4xl text-emerald-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">中小企業特化</h3>
+                        <p class="text-gray-600">
+                            中小企業の実情に合わせたAI活用事例と、限られたリソースでも実現できる方法をご紹介。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="text-center">
+                        <i class="fas fa-rocket text-4xl text-violet-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">今すぐ実践</h3>
+                        <p class="text-gray-600">
+                            理論だけでなく、明日から使えるプロンプト例と具体的な業務改善方法を実演します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section id="instructor" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-user-graduate ai-icon mr-3"></i>
+                    講師紹介
+                </h2>
+            </div>
+            
+            <div class="bg-white p-8 md:p-12 rounded-2xl card-shadow max-w-4xl mx-auto scroll-animate">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0 md:mr-8">
+                        <div class="w-48 h-48 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">斎藤友二</h3>
+                        <p class="text-lg text-blue-600 mb-6">AI開発エンジニア</p>
+                        
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex items-start">
+                                <i class="fas fa-code text-blue-500 mr-3 mt-1"></i>
+                                <p>AI開発エンジニアとして活動しながら、『AIマネタイズスクール』にてオンライン勉強会を定期開催し、最新のAI活用法を発信、情報共有しています。</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                                <p>これまでに10以上のWebアプリを開発。特にオリジナルAIアプリ「プロンプトジェネレーター」は販売開始からわずか10分で完売という実績があります。</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-green-500 mr-3 mt-1"></i>
+                                <p>コミュニティーでSNS戦略会議を継続的に実施し、経営者やクリエイターの情報発信を支援。実践的なAI活用スキルを伝えることに力を入れています。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-clipboard-list ai-icon mr-3"></i>
+                    セミナープログラム
+                </h2>
+                <p class="text-xl text-gray-600">
+                    充実した118分間で、AIの基礎から実践まで体系的に学習
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Introduction -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-6 scroll-animate">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold mr-4">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">導入＆講師紹介</h3>
+                                <p class="text-gray-600">セミナーの目的と概要説明、講師紹介と実績の共有</p>
+                            </div>
+                        </div>
+                        <div class="text-blue-600 font-semibold">8分</div>
+                    </div>
+                </div>
+                
+                <!-- Theory Part -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl mb-6 scroll-animate">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold mr-4">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">前半：座学パート</h3>
+                                <p class="text-gray-600">AIの基礎知識から実践的なプロンプト活用まで</p>
+                            </div>
+                        </div>
+                        <div class="text-green-600 font-semibold">60分</div>
+                    </div>
+                    <div class="ml-12 space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• 共感と問題提起</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• 誤解を解く</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• なぜ今AIなのか</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• AIの種類解説</span>
+                            <span class="text-gray-500">10分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700 font-medium">• 10個のプロンプト例紹介</span>
+                            <span class="text-gray-500">20分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-700">• プロンプト活用の基本原則</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Demonstration Part -->
+                <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-6 rounded-xl mb-6 scroll-animate">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold mr-4">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">後半：実演パート</h3>
+                                <p class="text-gray-600">実際のプロンプト活用を体験</p>
+                            </div>
+                        </div>
+                        <div class="text-purple-600 font-semibold">30分</div>
+                    </div>
+                    <div class="ml-12 space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700 font-medium">• 実際のプロンプト活用デモンストレーション</span>
+                            <span class="text-gray-500">25分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-700">• 業務への応用例紹介</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Q&A and Wrap-up -->
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl scroll-animate">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-semibold mr-4">4</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Q&A＆まとめ</h3>
+                                <p class="text-gray-600">質疑応答と次のステップについて</p>
+                            </div>
+                        </div>
+                        <div class="text-orange-600 font-semibold">20分</div>
+                    </div>
+                    <div class="ml-12 space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• よくある質問と回答</span>
+                            <span class="text-gray-500">5分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• まとめと行動喚起</span>
+                            <span class="text-gray-500">10分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                            <span class="text-gray-700">• 講座・サービス案内</span>
+                            <span class="text-gray-500">3分</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-700">• クロージング</span>
+                            <span class="text-gray-500">2分</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-star ai-icon mr-3"></i>
+                    セミナー参加のメリット
+                </h2>
+                <p class="text-xl text-gray-600">
+                    このセミナーで得られる具体的な効果
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-brain text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">AI技術の正しい理解</h3>
+                            <p class="text-gray-600">AIに対する誤解を解き、中小企業でも活用できる現実的なAI技術を理解できます。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-tools text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">実践的なプロンプト技術</h3>
+                            <p class="text-gray-600">10個の具体的なプロンプト例を学び、明日から業務で使える実践的なスキルを身につけられます。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-chart-line text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">業務効率の向上</h3>
+                            <p class="text-gray-600">AI活用による業務改善の具体例を学び、実際の業務に応用するためのヒントを得られます。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl card-shadow scroll-animate">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">競合との差別化</h3>
+                            <p class="text-gray-600">AI時代の到来に備え、他社に先駆けてAI技術を活用することで競争優位性を獲得できます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-users ai-icon mr-3"></i>
+                    こんな方におすすめ
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl scroll-animate">
+                    <i class="fas fa-briefcase text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">中小企業経営者</h3>
+                    <p class="text-gray-600">AIを活用して業務効率化や競争力強化を図りたい経営者の方</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl scroll-animate">
+                    <i class="fas fa-user-tie text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">管理職・リーダー</h3>
+                    <p class="text-gray-600">チームの生産性向上にAIを活用したいマネジメント層の方</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl scroll-animate">
+                    <i class="fas fa-laptop text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">IT初心者</h3>
+                    <p class="text-gray-600">ITやAIに詳しくないが、業務に活用したいと考えている方</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    <i class="fas fa-rocket text-yellow-300 mr-3"></i>
+                    今すぐAI活用の第一歩を踏み出しましょう
+                </h2>
+                <p class="text-xl mb-12 max-w-3xl mx-auto">
+                    限られた時間の中で最大の効果を得るために、<br>
+                    今すぐセミナーにお申し込みください。
+                </p>
+                
+                <div class="bg-white text-gray-800 p-8 rounded-2xl max-w-md mx-auto card-shadow">
+                    <h3 class="text-2xl font-bold mb-6">セミナーお申し込み</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="お名前" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="メールアドレス" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="電話番号" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">会社規模を選択してください</option>
+                                <option value="1-10">1〜10名</option>
+                                <option value="11-50">11〜50名</option>
+                                <option value="51-100">51〜100名</option>
+                                <option value="100+">100名以上</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea placeholder="ご質問やご要望があればお書きください（任意）" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-300 transform hover:scale-105">
+                            セミナーに申し込む
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="mt-12 text-sm text-gray-300">
+                    <p>※ お申し込み後、詳細情報をメールでお送りいたします</p>
+                    <p>※ ご質問等ございましたら、お気軽にお問い合わせください</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-robot text-2xl ai-icon mr-3"></i>
+                        <span class="text-xl font-bold">AI活用セミナー</span>
+                    </div>
+                    <p class="text-gray-300">
+                        中小企業経営者のためのAI活用入門セミナー。<br>
+                        実践的なスキルを身につけ、競争力を向上させましょう。
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">講師情報</h3>
+                    <p class="text-gray-300 mb-2">斎藤友二</p>
+                    <p class="text-gray-300 mb-2">AI開発エンジニア</p>
+                    <p class="text-gray-300">AIマネタイズスクール運営</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">セミナー内容</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• AI基礎知識</li>
+                        <li>• プロンプト活用法</li>
+                        <li>• 実演デモ</li>
+                        <li>• 業務応用例</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2025 AI活用セミナー - 斎藤友二. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+<script>
+/* js/main.js */
+// AI Seminar Website JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Mobile menu toggle functionality
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icon between hamburger and X
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-xl';
+            } else {
+                icon.className = 'fas fa-times text-xl';
+            }
+        });
+        
+        // Close mobile menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.className = 'fas fa-bars text-xl';
+            });
+        });
+    }
+    
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; // Account for sticky header
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Scroll animations
+    function handleScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+        
+        animatedElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    // Initial check for animations
+    handleScrollAnimations();
+    
+    // Add scroll event listener for animations
+    window.addEventListener('scroll', handleScrollAnimations);
+    
+    // Header scroll effect
+    const header = document.querySelector('nav');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add shadow to header when scrolling
+        if (scrollTop > 10) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // Form submission handling
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const phone = contactForm.querySelector('input[type="tel"]').value;
+            const companySize = contactForm.querySelector('select').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            // Basic validation
+            if (!name || !email || !phone) {
+                showNotification('お名前、メールアドレス、電話番号は必須項目です。', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNotification('正しいメールアドレスを入力してください。', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = '送信中...';
+            submitButton.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                showNotification('お申し込みありがとうございます！詳細情報をメールでお送りいたします。', 'success');
+                contactForm.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    // Notification system
+    function showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification fixed top-4 right-4 z-50 max-w-sm p-4 rounded-lg shadow-lg transform transition-all duration-300 translate-x-full`;
+        
+        // Set colors based on type
+        if (type === 'success') {
+            notification.classList.add('bg-green-500', 'text-white');
+            notification.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
+        } else if (type === 'error') {
+            notification.classList.add('bg-red-500', 'text-white');
+            notification.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i>${message}`;
+        } else {
+            notification.classList.add('bg-blue-500', 'text-white');
+            notification.innerHTML = `<i class="fas fa-info-circle mr-2"></i>${message}`;
+        }
+        
+        // Add close button
+        const closeButton = document.createElement('button');
+        closeButton.innerHTML = '<i class="fas fa-times ml-2"></i>';
+        closeButton.className = 'float-right';
+        closeButton.addEventListener('click', () => {
+            hideNotification(notification);
+        });
+        notification.appendChild(closeButton);
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.classList.remove('translate-x-full');
+        }, 100);
+        
+        // Auto hide after 5 seconds
+        setTimeout(() => {
+            hideNotification(notification);
+        }, 5000);
+    }
+    
+    function hideNotification(notification) {
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }
+    
+    // Add loading animation to CTA buttons
+    const ctaButtons = document.querySelectorAll('a[href="#contact"]');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Add pulse effect
+            this.classList.add('animate-pulse');
+            setTimeout(() => {
+                this.classList.remove('animate-pulse');
+            }, 1000);
+        });
+    });
+    
+    // Add hover effects to cards
+    const cards = document.querySelectorAll('.card-shadow');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease-out';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Initialize scroll progress indicator
+    function createScrollProgressIndicator() {
+        const progressBar = document.createElement('div');
+        progressBar.className = 'fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 z-50 transition-all duration-300';
+        progressBar.style.width = '0%';
+        document.body.appendChild(progressBar);
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+    }
+    
+    createScrollProgressIndicator();
+    
+    // Add fade-in animation to hero section
+    const heroSection = document.querySelector('.hero-gradient');
+    if (heroSection) {
+        heroSection.style.opacity = '0';
+        heroSection.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            heroSection.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+            heroSection.style.opacity = '1';
+            heroSection.style.transform = 'translateY(0)';
+        }, 300);
+    }
+    
+    // Add typewriter effect to main title (optional)
+    function addTypewriterEffect() {
+        const titleElement = document.querySelector('.hero-gradient h1');
+        if (titleElement) {
+            const originalText = titleElement.textContent;
+            titleElement.textContent = '';
+            
+            let i = 0;
+            const typeInterval = setInterval(() => {
+                if (i < originalText.length) {
+                    titleElement.textContent += originalText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typeInterval);
+                }
+            }, 100);
+        }
+    }
+    
+    // Uncomment the line below if you want typewriter effect
+    // addTypewriterEffect();
+    
+    // Add intersection observer for better performance
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all scroll-animate elements
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+    }
+    
+    // Console message for developers
+    console.log('🤖 AI Seminar Website loaded successfully!');
+    console.log('💡 Developed with modern web technologies');
+    console.log('📧 For inquiries about AI development, contact the instructor');
+    
+});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96fee54aabe0abad","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
+</body>
+</html>
